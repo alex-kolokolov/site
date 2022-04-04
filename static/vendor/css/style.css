@@ -1,0 +1,102 @@
+html {
+  font-size: 1.1rem;
+}
+h1 {
+ font-size: 1.3rem;
+}
+h2 {
+ font-size: 1.2rem;
+}
+h5{
+  font-size: 1.0 rem;
+ }
+
+@media (min-width: 768px) {
+ html {
+   font-size: 1.2rem;
+ }
+ h1 {
+     font-size: 1.4rem;
+ }
+ h2 {
+     font-size: 1.3rem;
+ }
+ h5{
+  font-size: 1.3rem;
+ }
+}
+
+@media (min-width: 991px) {
+   html {
+   font-size: 1.2rem;
+ }
+ h1 {
+     font-size: 1.5rem;
+ }
+ h2 {
+     font-size: 1.4rem;
+ }
+ h5{
+  font-size: 3.5rem;
+ }
+}
+
+@media (min-width: 1200px) {
+ html {
+   font-size: 1.3rem;
+ }
+ h1 {
+     font-size: 1.5rem;
+ }
+ h2 {
+     font-size: 1.4rem;
+ }
+ h5{
+  font-size: 3.0rem;
+ }
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  height: fit-content;
+  align-content: stretch;
+  margin: 0px;
+}
+.carousel-caption{
+  text-shadow: 1px 1px 10px #000;
+  top: 70%;
+  transform: translateY(-50%);
+}
+.niz{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+  align-content: stretch;
+  padding-bottom: 0.3%;
+}
+.logo{
+  display: flex;
+  align-self: flex-start;
+}
+.container-fluid {
+    background-color: rgba(0, 0, 0, 0);
+    background-size: auto;
+  padding-top: 0;
+  background-size: 100%;
+}
+.my-footer{
+ flex-grow: 10;
+}
+.my-carousel{
+  padding: 0;
+  flex-grow: 1;
+}
+.carousel-inner{
+  height: fit-content;
+}
+
+
