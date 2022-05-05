@@ -28,13 +28,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item-active">
-            <a class="nav-link" href="contacts">Контакты</a>
+            <a class="nav-link" href="#">Контакты</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../products">Товары</a>
+            <a class="nav-link" href="products">Товары</a>
           </li>
                 </ul>
-             {% if current_user.is_authenticated %}
+            {% if current_user.is_authenticated %}
                 <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
     <a class="navbar-brand pull-right justify-content-end" id="navbarSupportedContent" href="/logout">{{ current_user.name }}</a>
@@ -53,49 +53,33 @@
       </div>
   </nav>
 <div class="container">
-        {% block content %}
-        <p class="h1">Наша продукция</p>
-        <div class="row">
-        {% for item in items%}
-            <div class="col-12 col-lg-6 col-xl-6">
-
-            <div class="card mb-4">
-              <img class="card-img-top" src="{{url_for('static', filename=item.image[0].image)}}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{item.name}}</h5>
-                <p class="card-text">{{item.about}}</p>
-                <a href="/products/{{ item.id }}" class="btn btn-primary">Подробнее</a>
-            </div>
-                    </div>
-        </div>
-            {% endfor %}
-            </div>
+{% block content %}
+<h1>Добавление Продукта</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.title.label }}<br>
+        {{ form.title(class="form-control") }}<br>
+        {% for error in form.title.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.content.label }}<br>
+        {{ form.content(class="form-control") }}<br>
+        {% for error in form.content.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>{{ form.is_private() }} {{ form.is_private.label }}</p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+</form>
 {% endblock %}
-</div>
-<div class="container-fluid">
-  <div class='my-footer'>
-  <footer id="footer" class="mt-auto ">
-    <!--Footer-->
-    <div class="contact container-fluid bg-dark text-light">
-      <h1 class="display-1">Контакты<span class="badge badge-light"></span></h1>
-
-      <p>Email: office@galleonproduction.ru</p>
-      <p>Тел: 8 (987) 912-84-52</p>
-      <p>Адрес: 443547, с.п. Лопатино, мкн. Южный город ул. Николаевский проспект, д. 2, пом. 15, оф. 912</p>
-      <span class="border-bottom border-light"></span>
-      <div class="border-top border-light">
-        <div class="niz">
-
-          <p>Copyright © 2022</p>
-          <img class="logo" src="{{ url_for('static', filename='../static/img/logo2.svg') }}" width="50" height="50">
-          <p>ООО "ГАЛЕОН"</p>
-        </div>
-
-      </div>
-      <span class="border-bottom border-dark"></span>
-    </div>
-  </footer>
-  </div>
 </div>
 </div>
 </body>
