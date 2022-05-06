@@ -3,7 +3,6 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, EmailField, TextAreaField
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms.validators import DataRequired, Email
-from email_validator import validate_email
 from werkzeug.datastructures import CombinedMultiDict
 
 

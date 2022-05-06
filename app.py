@@ -45,7 +45,7 @@ if __name__ == '__main__':
     #     image = Image(name='../static/img/полка1.png')
     #     user.image.append(image)
     #     db_sess = db_session.create_session()
-    #     db_sess.add(user)
+    #
     #     db_sess.commit()
 
     # db_sess = db_session.create_session()
