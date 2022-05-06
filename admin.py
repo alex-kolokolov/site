@@ -16,7 +16,6 @@ from wtforms.validators import DataRequired
 from forms import LoginForm, RegisterForm, ItemForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
-from email_validator import validate_email
 
 UPLOAD_FOLDER = '../static/img/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
