@@ -78,7 +78,7 @@ def add_news():
             db_sess.add(item)
             db_sess.add(image)
             db_sess.commit()
-            redirect('/admin/products')
+            return redirect('/admin/products')
         else:
             return render_template('add_item.html',
                                    message="Неверный формат файла",
